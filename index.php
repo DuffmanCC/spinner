@@ -8,8 +8,6 @@
 	<body>
 	
 	<?php 
-	// string
-	// index.php?slider_one=jamon&slider_two=queso&slider_three=atun&slider_four=chorizo
 
 	$slider_one = $_GET['slider_one'];
 	$slider_two = $_GET['slider_two'];
@@ -20,11 +18,6 @@
 	$slider_two_array = str_split($slider_two, 1);
 	$slider_three_array = str_split($slider_three, 1);
 	$slider_four_array = str_split($slider_four, 1);
-
-/*	print_r($slider_one_array);
-	print_r($slider_two_array);
-	print_r($slider_three_array);
-	print_r($slider_four_array);*/
 
 	?>
 
@@ -158,6 +151,29 @@
 		    to {transform:rotate(<?php echo $rand_number ?>deg);}
 		}
 	</style>
+		<div class="inputs">
+			<form>
+				<p>
+					<label>Slide 1:</label>
+					<input type="text" name="slider_one">
+				</p>
+				<p>
+					<label>Slide 2:</label>
+					<input type="text" name="slider_two">
+				</p>
+				<p>
+					<label>Slide 3:</label>
+					<input type="text" name="slider_three">
+				</p>
+				<p>
+					<label>Slide 4:</label>
+					<input type="text" name="slider_four">
+				</p>
+				<p>
+					<input type="submit" name="submit" value="Send">
+				</p>
+			</form>
+		</div>
 		<div class="spiner-wrapper">
 
 			<div class="slider-one slider">
