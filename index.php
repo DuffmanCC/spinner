@@ -6,8 +6,8 @@
 	</head>
 
 	<body>
+	
 	<?php 
-
 	// string
 	// index.php?slider_one=jamon&slider_two=queso&slider_three=atun&slider_four=chorizo
 
@@ -30,16 +30,18 @@
 
 	<style type="text/css">
 		.spiner-wrapper{
-			width: 408px;
-			height: 408px;
-			border: 1px solid green;
+			width: 400px;
+			height: 400px;
+			/*border: 1px solid green;*/
 			position: relative;
+			top: 100px;
+			left: 100px;
 		}
 		.slider{
 			position: absolute;
 			/*border: 1px solid blue;*/
-			height: 202px;
-			width: 202px;
+			height: 200px;
+			width: 200px;
 		}
 		.char{
 			/*border: 1px solid red;*/
@@ -69,16 +71,16 @@
 		} ?>
 		.slider-one{
 			top: 0;
-			left: 204px;
+			left: 200px;
 		}
 		.slider-two{
-			top: 204;
-			left: 204px;
+			top: 200;
+			left: 200px;
 			transform-origin: center center;
 			transform: rotate(90deg);
 		}
 		.slider-three{
-			top: 204px;
+			top: 200px;
 			left: 0px;
 			transform-origin: center center;
 			transform: rotate(180deg);
@@ -104,16 +106,56 @@
 			transform-origin: bottom left;
 			<?php $deg_2x = ((90 - $deg_2) / 2); ?>
 			transform: rotate(<?php echo $deg_2x ?>deg);
+			top: -10px;
+			left: 0px;
 		}
 		.slider-inner-three{
 			transform-origin: bottom left;
 			<?php $deg_3x = ((90 - $deg_3) / 2); ?>
 			transform: rotate(<?php echo $deg_3x ?>deg);
+			top: -10px;
 		}
 		.slider-inner-four{
 			transform-origin: bottom left;
 			<?php $deg_4x = ((90 - $deg_4) / 2); ?>
 			transform: rotate(<?php echo $deg_4x ?>deg);
+			top: -10px;
+			left: -10px;
+		}
+		.circle-ext{
+			border: 2px solid black;
+			width: 430px;
+			height: 430px;
+			top: -13px;
+			left: -17px;
+			position: absolute;
+			border-radius: 50%;
+		}
+		.circle-int{
+			border: 2px solid black;
+			width: 350px;
+			height: 350px;
+			top: 24px;
+			left: 22px;
+			position: absolute;
+			border-radius: 50%;			
+		}
+		<?php $angle = [15, 75, 90, 105, 165, 180, 195, 255, 270, 285, 345, 360] ?>
+		<?php $k = $angle[array_rand($angle, 1)]; ?>
+		<?php $rand_number = $k +3240; ?>
+		.arrow{
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: 170px;
+			left: 180px;
+			transform-origin: center center;
+			transform: rotate(<?php echo $rand_number ?>deg);
+			-webkit-animation: spin 5s ease-out;
+		}
+		@keyframes spin {
+		    from {transform:rotate(0deg);}
+		    to {transform:rotate(<?php echo $rand_number ?>deg);}
 		}
 	</style>
 		<div class="spiner-wrapper">
@@ -149,6 +191,10 @@
 					} ?>
 				</div>
 			</div>
+
+			<div class="circle-ext"></div>
+			<div class="circle-int"></div>
+			<div class="arrow"><img src="navigation.svg"></div>
 
 		</div>
 	</body>
