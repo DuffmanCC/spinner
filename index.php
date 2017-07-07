@@ -37,7 +37,7 @@
 			width: 200px;
 		}
 		.char{
-			/*border: 1px solid red;*/
+			border: 1px solid red;
 			height: 200px;
 			position: absolute;
 			width: 20px;
